@@ -62,6 +62,12 @@ public class Main {
         for (Animal animalY : animals2) {
             System.out.println(animalY);
         }
+        TypedQuery<Animal> query3 = em.createQuery("select a from Animal a where a.dietType = :dietType", Animal.class);
+        query3.setParameter("dietType", "VEGAN");
+        List<Animal> animals3 = query3.getResultList();
+        for (Animal animalZ : animals3) {
+            System.out.println(animalZ);
+        }
 
 
 
