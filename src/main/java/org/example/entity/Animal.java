@@ -28,9 +28,14 @@ public class Animal {
     private DietType dietType;
     private String arrivalDate;
 
-    public Animal(String toto, int i, DietType dietType, String date) {
-
+    public Animal(String name, int age, DietType dietType, String arrivalDate) {
+        this.name = name;
+        this.age = age;
+        this.dietType = dietType;
+        this.arrivalDate = arrivalDate;
     }
+
+
 }
 
 

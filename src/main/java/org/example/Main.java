@@ -27,31 +27,34 @@ public class Main {
 //        em.getTransaction().commit();
 
         // search by id
-//        Animal animalFind1 = em.find(Animal.class,1);
-//        Animal animalFind2 = em.find(Animal.class,2);
-//        Animal animalFind3 = em.find(Animal.class,3);
-//        if (animalFind1 != null) {
-//            System.out.println(animalFind1);
-//        }
-//        if (animalFind2 != null) {
-//            System.out.println(animalFind2);
-//        }
-//        if (animalFind3 != null) {
-//            System.out.println(animalFind3);
-//        }else{
-//            System.out.println("Animal not found");
-//        }
-
-        // search by name
-        TypedQuery<Animal> query = em.createQuery("select a from Animal a where a.name = Tigrou", Animal.class);
-
-        List<Animal> animals = query.getResultList();
-        for (Animal animal : animals) {
-            System.out.println(animal);
+        Animal animalFind1 = em.find(Animal.class,1);
+        Animal animalFind2 = em.find(Animal.class,2);
+        Animal animalFind3 = em.find(Animal.class,3);
+        if (animalFind1 != null) {
+            System.out.println(animalFind1);
+        }
+        if (animalFind2 != null) {
+            System.out.println(animalFind2);
+        }
+        if (animalFind3 != null) {
+            System.out.println(animalFind3);
+        }else{
+            System.out.println("Animal not found");
         }
 
+        // search by name
+        TypedQuery<Animal> query = em.createQuery("select a from Animal a where a.name = 'Tigrou'", Animal.class);
+        List<Animal> animals = query.getResultList();
+        for (Animal animalX : animals) {
+            System.out.println(animalX.toString());
+        }
 
-
+        // search by dietType
+        TypedQuery<Animal> query2 = em.createQuery("select a from Animal a where a.dietType = 'CARNIVORE'", Animal.class);
+        List<Animal> animals2 = query2.getResultList();
+        for (Animal animalY : animals2) {
+            System.out.println(animalY);
+        }
 
 
 
