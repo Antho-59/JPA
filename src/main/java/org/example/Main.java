@@ -43,7 +43,14 @@ public class Main {
         }
 
         // search by name
-        TypedQuery<Animal> query = em.createQuery("select a from Animal a where a.name = 'Tigrou'", Animal.class);
+//        TypedQuery<Animal> query = em.createQuery("select a from Animal a where a.name = 'Tigrou'", Animal.class);
+//        List<Animal> animals = query.getResultList();
+//        for (Animal animalX : animals) {
+//            System.out.println(animalX.toString());
+//        }
+
+        TypedQuery<Animal> query = em.createQuery("select a from Animal a where a.name = :name", Animal.class);
+        query.setParameter("name", "Ratatouille");
         List<Animal> animals = query.getResultList();
         for (Animal animalX : animals) {
             System.out.println(animalX.toString());
